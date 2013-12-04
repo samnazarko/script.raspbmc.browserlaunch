@@ -122,8 +122,7 @@ def install_update(my_ver, live_ver):
 					break
 
 			#update version number
-			with open(local_ver_loc, 'w') as fw:
-					fw.write(live_ver)
+			os.system("echo " + live_ver + " | sudo tee " + local_ver_loc)
 
 			prog_bar.close()
 			launch_browser()
